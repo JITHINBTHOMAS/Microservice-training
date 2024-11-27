@@ -1,0 +1,4 @@
+spring.application.name=configServer
+spring.cloud.config.server.git.uri=https://github.com/JITHINBTHOMAS/configrepo
+management.security.enabled=false
+server.port=8888

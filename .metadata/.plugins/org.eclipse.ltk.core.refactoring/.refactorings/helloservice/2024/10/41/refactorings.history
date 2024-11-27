@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;HelloController.java&apos; to &apos;cloudgateway/src/main/java/com.ust.gateway&apos;&#x0D;&#x0A;- Original project: &apos;helloservice&apos;&#x0D;&#x0A;- Destination element: &apos;cloudgateway/src/main/java/com.ust.gateway&apos;&#x0D;&#x0A;- Original element: &apos;com.ust.service.controller.HelloController.java&apos;" description="Copy compilation unit" destination="=cloudgateway/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.ust.gateway" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.ust.service.controller{HelloController.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1728381912264" units="1" version="1.0"/>
+</session>

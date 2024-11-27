@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: lbcloudgateway
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true 
+      routes:
+#        - id: helloservice-route
+#          uri: http://localhost:8071
+#          predicates:
+#            - Path=/rest/service/**
+#        - id: factorialservice-route
+#          uri: http://localhost:8074
+#          predicates:
+#            - Path=/rest/factorial/**
+        - id: factorialservice-route
+          uri: lb://factorialservice
+          predicates:
+            - Path=/rest/factorial/**
+          filters:
+            - name: CircuitBreaker   #this is the default filter name
+              args:
+                name: helloServiceCircuitBreaker
+                fallbackUri: forward:/myfallback
+        - id: lbservice-route
+          uri: lb://HELLOSERVICE
+          predicates:
+            - Path=/rest/service/**
+          filters:
+            - name: CircuitBreaker   #this is the default filter name
+              args:
+                name: helloServiceCircuitBreaker
+                fallbackUri: forward:/myfallback 
+
+server:
+  port: 8073
+  
+management:
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
